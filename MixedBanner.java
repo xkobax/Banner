@@ -14,19 +14,14 @@ public class MixedBanner extends AbstractBanner  {
     @Override
     public String[] makeBanner(int size) {
 
-        String[] body1 = ArrayUtils.remove(body, 0);
+        String[] body1 = cutBanner(body);
         Random rnd = new Random();
         for (int j = body1.length - 1; j >= 1; j--) {
             int index = rnd.nextInt(j + 1);
             String temp = body1[index];
             body1[index] = body1[j];
             body1[j] = temp;
-
         }
-        String[] result = new String[size];
-        System.arraycopy(body1,0,result,0,size);
-
-        return result;
-
+        return turnToSize(body1,size);
     }
 }

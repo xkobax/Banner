@@ -14,8 +14,7 @@ public class Storage {
         return base;
     }
 
-
-     public  String[] getByName (String topic) {
+    public  String[] getByName (String topic) {
         Storage s = new Storage();
         int k = 0;
         for (int i = 0; i < s.getBase().length; i++) {

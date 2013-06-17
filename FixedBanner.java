@@ -12,7 +12,7 @@ public class FixedBanner extends AbstractBanner  {
     }
     @Override
     public String[] makeBanner(int size) {
-        String[] body1 = ArrayUtils.remove(body, 0);
+        String[] body1 = cutBanner(body);
         //Arrays.sort(body1);
         String[] result = new String[size];
         System.arraycopy(body1,0,result,0,size);
