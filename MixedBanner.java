@@ -8,8 +8,8 @@ import java.util.Random;
 
 
 public class MixedBanner extends AbstractBanner  {
-    MixedBanner(Storage s, String topic){
-        super(s,topic);
+    MixedBanner(String[] s){
+        super(s);
     }
     @Override
     public String[] makeBanner(int size) {

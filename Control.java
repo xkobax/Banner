@@ -1,7 +1,5 @@
 package com.ciklum.study.newbanner;
 
-import com.ciklum.study.banner.Controller;
-
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -18,10 +16,11 @@ public class Control {
         Scanner y = new Scanner(System.in);
         Integer type = y.nextInt();
         Storage storage = new Storage();
+        String[] base = storage.getByName(topic);
         boolean flow = true;
         while (flow) {
             if (type == 1) {
-                Banner mixed = new MixedBanner(storage,topic);
+                Banner mixed = new MixedBanner(base);
                 System.out.println(Arrays.toString(mixed.makeBanner(size)));
                 System.out.println("Press any button to refresh or Q to exit.");
                 Scanner d = new Scanner(System.in);
@@ -30,7 +29,7 @@ public class Control {
                     flow = false;
                 }
             }  else if (type == 2) {
-                Banner fixed = new FixedBanner(storage,topic);
+                Banner fixed = new FixedBanner(base);
                 System.out.println(Arrays.toString(fixed.makeBanner(size)));
                 flow = false;
 
