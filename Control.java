@@ -25,7 +25,7 @@ public class Control {
                 System.out.println("Press any button to refresh or Q to exit.");
                 Scanner d = new Scanner(System.in);
                 String o = d.next();
-                if (o.equals("Q")) {
+                if ("Q".equals(o)) {
                     flow = false;
                 }
             }  else if (type == 2) {
