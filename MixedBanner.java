@@ -1,11 +1,6 @@
 package com.ciklum.study.newbanner;
 
-
-import org.apache.commons.lang3.ArrayUtils;
-
 import java.util.Random;
-
-
 
 public class MixedBanner extends AbstractBanner  {
     MixedBanner(String[] s){

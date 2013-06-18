@@ -17,6 +17,8 @@ public class Control {
         Integer type = y.nextInt();
         Storage storage = new Storage();
         String[] base = storage.getByName(topic);
+        Banner fixed = new FixedBanner(base);
+        String fix = Arrays.toString(fixed.makeBanner(size));
         boolean flow = true;
         while (flow) {
             if (type == 1) {
@@ -29,15 +31,14 @@ public class Control {
                     flow = false;
                 }
             }  else if (type == 2) {
-                Banner fixed = new FixedBanner(base);
-                System.out.println(Arrays.toString(fixed.makeBanner(size)));
-                flow = false;
-
+                System.out.println(fix);
+                System.out.println("Press any button to refresh or Q to exit.");
+                Scanner d = new Scanner(System.in);
+                String o = d.next();
+                if ("Q".equals(o)) {
+                    flow = false;
+                }
             }
         }
-
-
     }
-
-
 }
