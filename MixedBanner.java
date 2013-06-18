@@ -9,14 +9,13 @@ public class MixedBanner extends AbstractBanner  {
     @Override
     public String[] makeBanner(int size) {
 
-        String[] body1 = cutBanner(body);
         Random rnd = new Random();
-        for (int j = body1.length - 1; j >= 1; j--) {
+        for (int j = body.length - 1; j >= 1; j--) {
             int index = rnd.nextInt(j + 1);
-            String temp = body1[index];
-            body1[index] = body1[j];
-            body1[j] = temp;
+            String temp = body[index];
+            body[index] = body[j];
+            body[j] = temp;
         }
-        return turnToSize(body1,size);
+        return turnToSize(body,size);
     }
 }

@@ -10,10 +10,6 @@ public abstract class AbstractBanner extends Banner  {
         this.body = base;
     }
 
-    public String[] cutBanner(String[] body) {
-        return ArrayUtils.remove(body, 0);
-    }
-
     public String[] turnToSize(String[] body,int size) {
         String[] result = new String[size];
         System.arraycopy(body,0,result,0,size);

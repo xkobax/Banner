@@ -1,5 +1,7 @@
 package com.ciklum.study.newbanner;
 
+import org.apache.commons.lang3.ArrayUtils;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -16,7 +18,8 @@ public class Control {
         Scanner y = new Scanner(System.in);
         Integer type = y.nextInt();
         Storage storage = new Storage();
-        String[] base = storage.getByName(topic);
+        String[] income = storage.getByName(topic);
+        String[] base = ArrayUtils.remove(income, 0);
         Banner fixed = new FixedBanner(base);
         String fix = Arrays.toString(fixed.makeBanner(size));
         boolean flow = true;
